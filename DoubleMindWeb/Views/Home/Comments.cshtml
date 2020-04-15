@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+    <div>
+        <h3>Comments</h3>
+        <table>
+            <tr>
+                <td><p>User</p></td>
+                <td><p>Comment</p></td>
+                <td><p>Цена</p></td>
+                <td></td>
+            </tr>
+            @foreach (var b in ViewBag.Comments)
+            {
+                <tr>
+                    <td><p>@b.CommentUser.Login</p></td>
+                    <td><p>@b.CommentText</p></td>
+                    <td><p>@b.CommentStars</p></td>
+                    <td><p><a href="">Delete</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+

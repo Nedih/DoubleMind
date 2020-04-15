@@ -16,6 +16,16 @@ namespace DoubleMindWeb.Controllers
 
         public ActionResult Index()
         {
+            return View();     
+        }
+
+        public ActionResult Download()
+        {
+            return View();
+        }
+
+        public ActionResult Comments()
+        {
             // получаем из бд все объекты Book
             //IEnumerable<User> users = db.Users;
             IEnumerable<Comment> comments = db2.Comments;
@@ -24,7 +34,11 @@ namespace DoubleMindWeb.Controllers
             ViewBag.Comments = comments;
             // возвращаем представление
             return View();
-            
+        }
+
+        public ActionResult Contacts()
+        {
+            return View();
         }
 
 
