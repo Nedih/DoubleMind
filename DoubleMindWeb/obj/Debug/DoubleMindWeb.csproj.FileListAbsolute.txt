@@ -243,18 +243,12 @@ C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\Microsoft.Owin.Se
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\System.Web.Helpers.resources.dll
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\System.Web.Mvc.resources.dll
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\System.Web.Optimization.resources.dll
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\System.Web.Razor.resources.dll
-C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\System.Web.WebPages.resources.dll
-C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\System.Web.WebPages.Deployment.resources.dll
-C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\System.Web.WebPages.Razor.resources.dll
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\System.Net.Http.Formatting.resources.dll
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\System.Web.Http.resources.dll
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\System.Web.Http.WebHost.resources.dll
-C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\EntityFramework.resources.dll
-C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\EntityFramework.SqlServer.resources.dll
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\Microsoft.AspNet.Identity.Core.resources.dll
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\Microsoft.AspNet.Identity.Owin.resources.dll
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\bin\ru\Microsoft.AspNet.Identity.EntityFramework.resources.dll
@@ -270,3 +264,7 @@ C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindW
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindWeb.csproj.CopyComplete
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindWeb.dll
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindWeb.pdb
+C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindWeb.Migrations.InitialCreate.resources
+C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindWeb.csproj.GenerateResource.cache
+C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindWeb.Migrations.DataMigration.resources
+C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindWeb.Migrations.DataMigration2.resources

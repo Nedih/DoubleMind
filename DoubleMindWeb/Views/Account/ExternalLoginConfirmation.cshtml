@@ -1,7 +1,14 @@
 ﻿@model DoubleMindWeb.Models.ExternalLoginConfirmationViewModel
 @{
-    ViewBag.Title = "Регистрация";
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
 <h2>@ViewBag.Title.</h2>
 <h3>Link your account @ViewBag.LoginProvider.</h3>
 
@@ -12,10 +19,10 @@
     <h4>Link form</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-<p class="text-info">
-    You have succesfuly authenticated with <strong>@ViewBag.LoginProvider</strong>
-    Enter a username on this site below and enter "Register" button to complete registration.
-</p>
+    <p class="text-info">
+        You have succesfuly authenticated with <strong>@ViewBag.LoginProvider</strong>
+        Enter a username on this site below and enter "Register" button to complete registration.
+    </p>
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">

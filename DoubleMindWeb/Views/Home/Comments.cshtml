@@ -17,12 +17,10 @@
                 <td><p>Цена</p></td>
                 <td></td>
             </tr>
-            @foreach (var b in ViewBag.Comments)
+            @foreach (var b in ViewBag.Roles)
             {
                 <tr>
-                    <td><p>@b.CommentUser.Login</p></td>
-                    <td><p>@b.CommentText</p></td>
-                    <td><p>@b.CommentStars</p></td>
+                    <td><p>@b</p></td>
                     <td><p><a href="">Delete</a></p></td>
                 </tr>
             }
