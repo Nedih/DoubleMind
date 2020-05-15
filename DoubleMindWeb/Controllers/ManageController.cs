@@ -55,12 +55,12 @@ namespace DoubleMindWeb.Controllers
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Ваш пароль изменен."
-                : message == ManageMessageId.SetPasswordSuccess ? "Пароль задан."
-                : message == ManageMessageId.SetTwoFactorSuccess ? "Настроен поставщик двухфакторной проверки подлинности."
-                : message == ManageMessageId.Error ? "Произошла ошибка."
-                : message == ManageMessageId.AddPhoneSuccess ? "Ваш номер телефона добавлен."
-                : message == ManageMessageId.RemovePhoneSuccess ? "Ваш номер телефона удален."
+                message == ManageMessageId.ChangePasswordSuccess ? "Your phone has been changed."
+                : message == ManageMessageId.SetPasswordSuccess ? "Password set."
+                : message == ManageMessageId.SetTwoFactorSuccess ? "Double authentification provider ready."
+                : message == ManageMessageId.Error ? "Error occured."
+                : message == ManageMessageId.AddPhoneSuccess ? "Your phone number has been added."
+                : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number has been deleted."
                 : "";
 
             var userId = User.Identity.GetUserId();
@@ -123,7 +123,7 @@ namespace DoubleMindWeb.Controllers
                 var message = new IdentityMessage
                 {
                     Destination = model.Number,
-                    Body = "Ваш код безопасности: " + code
+                    Body = "Your security code: " + code
                 };
                 await UserManager.SmsService.SendAsync(message);
             }
@@ -190,7 +190,7 @@ namespace DoubleMindWeb.Controllers
                 return RedirectToAction("Index", new { Message = ManageMessageId.AddPhoneSuccess });
             }
             // Это сообщение означает наличие ошибки; повторное отображение формы
-            ModelState.AddModelError("", "Не удалось проверить телефон");
+            ModelState.AddModelError("", "Can't check the phone");
             return View(model);
         }
 

@@ -4,15 +4,27 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DoubleMindWeb.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace DoubleMindWeb.Controllers
 {
+
+    [RequireHttps]
     public class HomeController : Controller
     {
 
         // создаем контекст данных
-        UsersList db = new UsersList();
-        CommentsList db2 = new CommentsList();
+        //UsersList db = new UsersList();
+        //CommentsList db2 = new CommentsList();
+
+        [Authorize(Roles = "admin")]
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
 
         public ActionResult Index()
         {
@@ -24,16 +36,34 @@ namespace DoubleMindWeb.Controllers
             return View();
         }
 
+        [Authorize(Roles = "admin")]
+        public ActionResult CommentsAdmin()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
         public ActionResult Comments()
         {
             // получаем из бд все объекты Book
             //IEnumerable<User> users = db.Users;
-            IEnumerable<Comment> comments = db2.Comments;
+            // IEnumerable<Comment> comments = db2.Comments;
             // передаем все объекты в динамическое свойство Books в ViewBag
             //ViewBag.Users = users;
-            ViewBag.Comments = comments;
+            // ViewBag.Comments = comments;
             // возвращаем представление
-            return View();
+
+
+
+            IList<string> roles = new List<string> { "Роль не определена" };
+            ApplicationUserManager userManager = HttpContext.GetOwinContext()
+                                                    .GetUserManager<ApplicationUserManager>();
+            ApplicationUser user = userManager.FindByName(User.Identity.Name);
+            if (user != null)
+                roles = userManager.GetRoles(user.Id);
+            ViewBag.Roles = roles;
+            return View(roles);
         }
 
         public ActionResult Contacts()

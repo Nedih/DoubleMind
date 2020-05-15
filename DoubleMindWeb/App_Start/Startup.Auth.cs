@@ -58,11 +58,11 @@ namespace DoubleMindWeb
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "272024540793-tluqmm2n9q79jdide7r2fh04t5d421ec.apps.googleusercontent.com",
+                ClientSecret = "9uEiK9dE5DPACAR3deti1T4R"
+            });
         }
     }
 }

@@ -15,8 +15,9 @@ namespace DoubleMindWeb
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new UserDbInitializer());
-            Database.SetInitializer(new CommentDbInitializer());
+            // Database.SetInitializer(new UserDbInitializer());
+            //Database.SetInitializer(new CommentDbInitializer());
+            Database.SetInitializer<ApplicationDbContext>(new AppDbInitializer());
 
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
