@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace DoubleMindWeb.Controllers
 {
+
+    [RequireHttps]
     public class HomeController : Controller
     {
 
@@ -34,6 +36,14 @@ namespace DoubleMindWeb.Controllers
             return View();
         }
 
+        [Authorize(Roles = "admin")]
+        public ActionResult CommentsAdmin()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
         public ActionResult Comments()
         {
             // получаем из бд все объекты Book
@@ -49,7 +59,7 @@ namespace DoubleMindWeb.Controllers
             IList<string> roles = new List<string> { "Роль не определена" };
             ApplicationUserManager userManager = HttpContext.GetOwinContext()
                                                     .GetUserManager<ApplicationUserManager>();
-            ApplicationUser user = userManager.FindByEmail(User.Identity.Name);
+            ApplicationUser user = userManager.FindByName(User.Identity.Name);
             if (user != null)
                 roles = userManager.GetRoles(user.Id);
             ViewBag.Roles = roles;
