@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using DoubleMindWeb.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace DoubleMindWeb.Controllers
 {
@@ -16,9 +17,9 @@ namespace DoubleMindWeb.Controllers
 
         // создаем контекст данных
         //UsersList db = new UsersList();
-        //CommentsList db2 = new CommentsList();
+        ApplicationDbContext db = new ApplicationDbContext();
 
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -28,6 +29,8 @@ namespace DoubleMindWeb.Controllers
 
         public ActionResult Index()
         {
+            
+
             return View();     
         }
 
@@ -36,7 +39,7 @@ namespace DoubleMindWeb.Controllers
             return View();
         }
 
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public ActionResult CommentsAdmin()
         {
             ViewBag.Message = "Your application description page.";
@@ -54,7 +57,9 @@ namespace DoubleMindWeb.Controllers
             // ViewBag.Comments = comments;
             // возвращаем представление
 
+            var comments = db.Comments.ToList(); //.Include(x => x.Comments)
 
+            return View(comments);
 
             IList<string> roles = new List<string> { "Роль не определена" };
             ApplicationUserManager userManager = HttpContext.GetOwinContext()
@@ -64,6 +69,29 @@ namespace DoubleMindWeb.Controllers
                 roles = userManager.GetRoles(user.Id);
             ViewBag.Roles = roles;
             return View(roles);
+        }
+
+        [HttpPost]
+        public ActionResult PostComment(string CommentText, int CommentMark)
+        {
+            ApplicationUserManager userManager = HttpContext.GetOwinContext()
+                                                   .GetUserManager<ApplicationUserManager>();
+            ApplicationUser user = userManager.FindByName(User.Identity.Name);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            Comment c = new Comment();
+            
+            c.CommentText = CommentText;
+            c.CommentUserName = User.Identity.Name; //CommentUser.UserName
+            //c.CommentUser = user; 
+            c.CommentStars = CommentMark;
+            c.CommentCreated = DateTime.Now;
+            db.Comments.Add(c);
+            db.SaveChanges();
+
+            return RedirectToAction("Comments");
         }
 
         public ActionResult Contacts()

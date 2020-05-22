@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -27,11 +28,13 @@ namespace DoubleMindWeb.Models
         //public string CommentUserName { get; set; }
         public string CommentText { get; set; }
         public int CommentStars { get; set; }
+        public string CommentUserName { get; set; }
+        public DateTime CommentCreated { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-
+        public DbSet<Comment> Comments { get; set; }
         public ApplicationDbContext() : base("IdentityDb", throwIfV1Schema: false) { }
 
         public static ApplicationDbContext Create()
