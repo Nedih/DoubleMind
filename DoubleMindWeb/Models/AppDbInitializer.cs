@@ -8,8 +8,9 @@ using System.Web;
 
 namespace DoubleMindWeb.Models
 {
-    public class AppDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
+    public class AppDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
     {
+
         protected override void Seed(ApplicationDbContext context)
         {
             var userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(context));

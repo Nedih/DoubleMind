@@ -268,3 +268,6 @@ C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindW
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindWeb.csproj.GenerateResource.cache
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindWeb.Migrations.DataMigration.resources
 C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindWeb.Migrations.DataMigration2.resources
+C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindWeb.Migrations.CommentsFix.resources
+C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindWeb.Migrations.202005212147509_CommentDateFix.resources
+C:\Users\ihorn\source\repos\Nedih\DoubleMind\DoubleMindWeb\obj\Debug\DoubleMindWeb.Migrations.CommentDateFix.resources
