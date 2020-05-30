@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Web;
 
 namespace DoubleMindWeb.Models
 {
@@ -26,8 +22,8 @@ namespace DoubleMindWeb.Models
             roleManager.Create(role2);
 
             // создаем пользователей
-            var admin = new ApplicationUser { Email = "ihor.nedaiev@nure.ua", UserName = "ihor.nedaiev" };
-            string password = "Flex_M1l0s";
+            var admin = new ApplicationUser { Email = "admin@nure.ua", UserName = "admin" };
+            string password = "Admin_123";
             var result = userManager.Create(admin, password);
 
             // если создание пользователя прошло успешно

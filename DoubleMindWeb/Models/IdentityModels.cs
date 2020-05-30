@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Runtime.Serialization;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DoubleMindWeb.Models
 {
@@ -12,6 +13,10 @@ namespace DoubleMindWeb.Models
     public class ApplicationUser : IdentityUser
     {
         public virtual ICollection<Comment> UserComments { get; set; }
+        [DataMember]
+        public int UserLevel { get; set; }
+        [DataMember]
+        public int UserPoints { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Обратите внимание, что authenticationType должен совпадать с типом, определенным в CookieAuthenticationOptions.AuthenticationType
