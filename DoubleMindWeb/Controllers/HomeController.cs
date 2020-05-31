@@ -10,7 +10,7 @@ using System.Web.Mvc;
 namespace DoubleMindWeb.Controllers
 {
 
-    [RequireHttps]
+    
     public class HomeController : Controller
     {
 
@@ -60,14 +60,14 @@ namespace DoubleMindWeb.Controllers
 
             return View(comments);
 
-            IList<string> roles = new List<string> { "Роль не определена" };
+           /* IList<string> roles = new List<string> { "Роль не определена" };
             ApplicationUserManager userManager = HttpContext.GetOwinContext()
                                                     .GetUserManager<ApplicationUserManager>();
             ApplicationUser user = userManager.FindByName(User.Identity.Name);
             if (user != null)
                 roles = userManager.GetRoles(user.Id);
             ViewBag.Roles = roles;
-            return View(roles);
+            return View(roles);*/
         }
 
         [HttpPost]
