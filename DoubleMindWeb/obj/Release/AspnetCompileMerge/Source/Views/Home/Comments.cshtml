@@ -20,62 +20,59 @@
 }
 
 <div class="centered3">
-    <p>Comments</p>
+    <b>Comments</b>
     <hr />
 </div>
 
 
-        @foreach (var b in Model)
-        {
-<div class="centered">
-    <div class="horizontal" style="margin-top: auto">
+@foreach (var b in Model)
+{
+    <div class="centered" style="padding-top:30pt;">
+        <div class="horizontal" style="margin-top: auto">
 
-        <div class="centered2">
-            <div class="horizontal" style="margin-top: 30pt; margin-bottom: 30pt">
-                <dl class="dl-horizontal">
-                    <dt align="center">@b.CommentUserName: </dt>
-                    <dd>
-                        Mark: @b.CommentStars
-                    </dd>
-                    <dt>Text:</dt>
-                    <dd style="max-width: 250px; word-break: break-all;">@b.CommentText</dd>
-                    <dt>Date:</dt>
-                    <dd>@b.CommentCreated</dd>
-                </dl>
+            <div class="centered2">
+                <div class="horizontal" style="margin-top: 0pt; margin-bottom: 0pt">
+                    <dl class="dl-horizontal"  style="padding-top: 0pt; padding-bottom: 0pt">
+                        <dt align="center" style="padding-left: 20px; margin-top: 10px;">@b.CommentUserName: </dt>
+                        <dd style="margin-top: 10px">
+                            Mark: @b.CommentStars
+                        </dd>
+                        <dt>Text:</dt>
+                        <dd style="max-width: 250px; word-break: break-all; padding-right: 20px">@b.CommentText</dd>
+                        <dt style="margin-bottom:10px">Date:</dt>
+                        <dd style="margin-bottom:10px">@b.CommentCreated</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="deleteForm" style="margin-top: 15pt">
+                @using (Html.BeginForm("DeleteComment", "Home", FormMethod.Post))
+                {
+                    <input type="hidden" name="CommentId" value="@b.CommentId" />
+                    if (user.Roles.Count > 1)
+                    {
+                        <input type="submit" value="Delete" class="btn-delete" />
+                    }
+                }
             </div>
         </div>
-    
-        <div class="deleteForm" style="margin-top: 20pt">
-            @using (Html.BeginForm("DeleteComment", "Home", FormMethod.Post))
-            {
-                <input type="hidden" name="CommentId" value="@b.CommentId" />
-                if (user.Roles.Count > 1)
-                {
-                    <input type="submit" value="Delete" class="btn-delete" />
-                }
-            }
-        </div>
     </div>
-</div>
-        }
+    <hr style="margin-left:5%;margin-right:5%; margin-top: 20pt"/>
+}
 
 <div class="centered">
     <div class="comment">
         @using (Html.BeginForm("PostComment", "Home", FormMethod.Post))
         {
-            <span>@User.Identity.Name</span>
+            <span style="padding-left:20px; color:#5993d2; -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;">@User.Identity.Name</span>
             <input type="number" name="CommentMark" min="1" max="5" placeholder="1-5"
-                   style="        width: 50px;
-        height: 20px;
-        margin-top: 10px;
-        margin-left: 20px;
-        align-content: end
-" /><br />
+                   style="width: 50px; height: 20px; margin-top: 10px; margin-left: 20px; align-content: end" /><br />
             <input type="text" name="CommentText" placeholder="Type new comment..."
-                   style=" width: 100%; height: 50px; margin-top: 15px" />
+                   style=" width: 400px; max-width: 400px; height: 50px; margin-top: 15px; margin-left: 20px" />
             <br />
             <input type="submit" value="Post Comment"
-                   class="btn btn-success" style="margin-top:10px" />
+                   class="btn btn-success" style="margin-top:10px; margin-left: 20px" />
         }
     </div>
 </div>

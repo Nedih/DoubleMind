@@ -14,6 +14,13 @@ body {
         margin: 0;
     }
 
+.carousel {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 80pt;
+    margin-bottom: 80pt;
+}
+
     /*html {
     height: 100%;
     min-height: 100%;
@@ -33,6 +40,14 @@ body {
     background-color: #e13a51;
     border: 2px black solid;
 }
+
+.profile dd a{
+    color: white;
+}
+
+    .profile dd a:hover {
+        color: #a3a7fc;
+    }
 
 .horizontal{
     display:flex;
@@ -62,7 +77,6 @@ body {
     .centered3 b {
         color: #f2f4f7;
         font-size: 52pt;
-        margin-left: 0;
         padding-bottom: 10pt;
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: black;
@@ -425,28 +439,36 @@ body {
                 color: black;
             }
 
+            .linkk{
+                color: white;
+            }
 
 
-@media screen and (max-width: 450px) {
+
+@media screen and (max-width: 660px) {
     body {
-        background-color: orange;
-        font-size: 10px;
+        font-size: 8px;
         font-family: Verdana, Arial, Helvetica, Sans-Serif;
     }
 
-    p{
+    .carousel {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 30pt;
+        margin-bottom: 5pt;
+    }
+
+    p {
         font-size: 8px;
     }
 
     .nav-link {
         margin-bottom: 0;
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 2%;
+        margin-right: 2%;
     }
 
         .nav-link li {
-            display: inline-block;
-            float: left;
             padding-right: 2pt;
         }
 
@@ -456,24 +478,11 @@ body {
             padding: 2pt;
         }
 
-            .nav-link a:hover {
-                background-color: white;
-                color: black;
-            }
-
     .logo {
         height: 25px;
         width: auto;
-        align-content: center;
-    }
-
-    table {
-        vertical-align: middle;
-        text-align: left;
-    }
-
-    .header {
-        font-weight: bold;
+        margin: 10px;
+        padding: 0;
     }
 
     td {
@@ -481,30 +490,27 @@ body {
     }
 
     .content {
-        margin-left: 1%;
-        margin-right: 1%;
-        padding-bottom: 75pt;
+        padding-bottom: 95pt;
     }
 
     .shapka {
-        display: flex;
-        justify-content: center;
-        background-color: #616ff5;
-        align-content: center;
-        margin-bottom: 20pt;
+        margin-bottom: 0pt;
         width: 100%;
     }
 
-    .shapka img{
-        width: 300px;
-        height: auto;
-    }
+        .shapka img {
+            width: 70%;
+            height: auto;
+        }
 
     .Desc {
         margin-top: 20pt;
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-left: 0%;
+        margin-right: 0%;
+        padding-left: 10%;
+        padding-right: 10%;
         color: black;
+        padding-bottom: 10%;
     }
 
         .Desc p {
@@ -515,8 +521,10 @@ body {
 
     .SysR {
         margin-top: 20pt;
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-left: 0%;
+        margin-right: 0%;
+        padding-left: 10%;
+        padding-right: 10%;
     }
 
         .SysR p {
@@ -525,96 +533,81 @@ body {
         }
 
     h9 {
-        font-size: 9pt;
+        font-size: 10pt;
         padding-bottom: 10pt;
     }
 
     footer {
-        text-align: center;
         font-size: 8pt;
-        background-color: black;
-        color: lightgray;
         padding: 5pt;
-        margin-top: 50pt;
+        margin-top: 10pt;
         width: 100%;
-        bottom: 0;
-        position: absolute;
-    }
-
-    #login-btn {
-        color: white;
-    }
-
-    
-
-    .dl-horizontal dt {
-        white-space: normal;
     }
 
     /* Set width on the form input elements since they're 100% wide by default */
     input,
     select,
     textarea {
-        max-width: 180px;
+        max-width: 50%;
     }
 
     .checkbox {
-        float: left;
-        display: flex;
-        float: left;
-        display: flex;
-        justify-content: left;
         padding-right: 10pt;
     }
 
     .RememberMe {
-        display: flex;
-        float: left;
         margin-right: 30pt;
         position: relative;
     }
 
+    .nav-link{
+        padding:0;
+    }
 
     #registerLink {
-        color: black;
-        background-color: white;
-        border: 1px solid black;
-        margin-top: 5px;
+        margin: 5px;
         padding: 1px;
-        font-size: 6px;
+        font-size: 8px;
+        right: 0;
     }
 
         #registerLink:hover {
-            color: white;
-            background-color: forestgreen;
-            border: 1px solid white;
         }
 
 
     #loginLink {
-        color: black;
-        background-color: white;
-        border: 1px solid black;
-        margin-top: 5px;
-        padding: 1px;
-        font-size: 6px;
+        margin: 5px;
+        padding: 0px;
+        font-size: 8px;
+        right: 0;
     }
 
-        #loginLink:hover {
-            color: white;
-            background-color: forestgreen;
-            border: 1px solid white;
-        }
+    .btn {
+        width: auto;
+        height: 20px;
+        padding: 0px;
+        font-size:10pt;
+    }
 
-    #navbarSupportedContent {
-        align-content: center;
-        align-items: center;
-        display: inline-flex !important;
+    .navbar-nav li a{
+        padding: 3px;
+        margin-right: 5px;
+        max-width: 60px;
+        display: flex;
+    }
+
+    h2{
+        font-size: 16pt;
+    }
+
+    .form-control {
+        padding: 3px;
+        width: auto;
+        height: 20px;
     }
 
     .navbar-right {
-        margin-left: auto;
-        margin-right: 1px;
+        margin-left: 20px;
         top: 5px;
         right: 0;
     }
@@ -626,6 +619,33 @@ body {
             .navbar-right a:hover {
                 color: black;
             }
-}
+
+    #navbarSupportedContent {
+        right: 0;
+        padding: 0;
     }
+
+    .navbar {
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .navbar-right {
+        margin-left: auto;
+        margin-right: 1pt;
+        top: 5px;
+        right: 0;
+        padding: 0;
+    }
+
+    .collapse{
+        margin:0;
+        padding:0;
+    }
+
+
+
+}
+    
 

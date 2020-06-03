@@ -19,13 +19,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <div class="centered">
-    <h2>You can contact us by:</h2>
+    <b style="-webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: black; color: white; font-size: 44px">You can contact us by:</b>
     <br />
     <br />
     </div>
     <div class="centered">
         <div class="contacts">
-            <div class="contacts2">
+            <div class="contacts2" style="border: 2px black solid; background-color: #e13a51; padding: 20px">
                       <table>
                           <tr>
                               <td>
@@ -33,7 +34,7 @@
                               </td>
                               <td>
                                   <a href="@LinkModel.TelegramLink">
-                                      <img src="https://d1icd6shlvmxi6.cloudfront.net/gsc/TRWODI/a6/70/35/a67035bfac6544929ec97a046f5928f4/images/contacts/telegram_icon_u148.svg?token=71a757d1825b0bc9471dbcfc303d9538586813e3cfd2d3b9be1979c3c0787743">
+                                      <img src="../Resources/Telegram.png">
                                   </a>
                               </td>
                           </tr>
@@ -43,7 +44,7 @@
                               </td>
                               <td>
                                   <a href="@LinkModel.GmailLink">
-                                      <img src="https://d1icd6shlvmxi6.cloudfront.net/gsc/TRWODI/a6/70/35/a67035bfac6544929ec97a046f5928f4/images/contacts/google_icon_u149.svg?token=43aa6ab5eabd92bee86f8c7e6d4154dced9a57212ad9b579070a0cbd13924c98" />
+                                      <img src="../Resources/Gmail.png" />
                                   </a>
                               </td>
                           </tr>
@@ -53,7 +54,7 @@
                               </td>
                               <td>
                                   <a href="@LinkModel.LinkeDinLink">
-                                      <img src="https://d1icd6shlvmxi6.cloudfront.net/gsc/TRWODI/a6/70/35/a67035bfac6544929ec97a046f5928f4/images/contacts/linkedin_icon_u150.svg?token=8a20ef5d9476e1f9f0daac7658c43c9579e9598a5c049f874b0d91dc45dc2a3b" />
+                                      <img src="../Resources/LinkeDin.png" />
                                   </a>
                               </td>
                           </tr>
@@ -63,13 +64,13 @@
                               </td>
                               <td>
                                   <a href="@LinkModel.LinkeDinLink">
-                                      <img href="@LinkModel.TwitchLink" src="https://d1icd6shlvmxi6.cloudfront.net/gsc/TRWODI/a6/70/35/a67035bfac6544929ec97a046f5928f4/images/contacts/twitch_icon_u151.svg?token=b1bbcec1cd2deea88b425ea6697e57ed563f041e23cd2a25ecc4ffcf672119ec" />
+                                      <img src="../Resources/Twitch.png" />
                                   </a>
                               </td>
                           </tr>
                       </table>
                 </div>
-            <div class="contacts2">
+            <div class="contacts2" style="border: 2px black solid; background-color: #e13a51; padding: 20px">
                 @if (user.Roles.Count > 1)
                  {
                     using (Html.BeginForm("EditLinks", "Home", FormMethod.Post))

@@ -26,14 +26,15 @@
         <h2>Or click the link below:</h2>
 
         <a href="@LinkModel.DownloadLink">Download</a>
-
-        @if (user.Roles.Count > 1)
-        {
-            using (Html.BeginForm("EditLink", "Home", FormMethod.Post))
+        <div style="margin-top: 15px">
+            @if (user.Roles.Count > 1)
             {
-                <textarea name="Link" placeholder="@LinkModel.DownloadLink"></textarea>
-                <input type="submit" name="Change" value="Change" />
+                using (Html.BeginForm("EditLink", "Home", FormMethod.Post))
+                {
+                    <textarea name="Link" placeholder="@LinkModel.DownloadLink"></textarea>
+                    <input type="submit" name="Change" value="Change" />
+                }
             }
-         }
+        </div>
         </div>
 </div>

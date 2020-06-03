@@ -15,12 +15,10 @@
 <body>
     <div id="page-container">
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: black; margin-bottom: 0;  vertical-align: middle">
-            <img src=@Url.Content("~/Resources/NavIcon.png") class="logo">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <img src=@Url.Content("~/Resources/NavIcon.png") class="logo">
                 <ul class="nav-link">
                     <li>
                         @Html.ActionLink("Double Mind", "Index", "Home", new { @class = "nav-link" }, null)

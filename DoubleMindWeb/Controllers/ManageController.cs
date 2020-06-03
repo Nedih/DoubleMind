@@ -54,12 +54,12 @@ namespace DoubleMindWeb.Controllers
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Your phone has been changed."
+                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
                 : message == ManageMessageId.SetPasswordSuccess ? "Password set."
                 : message == ManageMessageId.SetTwoFactorSuccess ? "Double authentification provider ready."
                 : message == ManageMessageId.Error ? "Error occured."
                 : message == ManageMessageId.AddPhoneSuccess ? "Your phone number has been added."
-                : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number has been deleted."
+                : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number has been removed."
                 : "";
 
             var userId = User.Identity.GetUserId();
@@ -280,8 +280,8 @@ namespace DoubleMindWeb.Controllers
         public async Task<ActionResult> ManageLogins(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.RemoveLoginSuccess ? "Внешнее имя входа удалено."
-                : message == ManageMessageId.Error ? "Произошла ошибка."
+                message == ManageMessageId.RemoveLoginSuccess ? "Outer name has been deleted."
+                : message == ManageMessageId.Error ? "Error occured."
                 : "";
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             if (user == null)
