@@ -14,19 +14,19 @@
       <publishTime>12/18/2016 13:55:30</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>06/01/2020 20:04:13</publishTime>
+      <publishTime>06/03/2020 02:48:46</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>06/01/2020 20:04:13</publishTime>
+      <publishTime>06/03/2020 02:48:46</publishTime>
     </File>
     <File Include="bin/DocumentFormat.OpenXml.dll">
       <publishTime>05/21/2020 21:48:48</publishTime>
     </File>
     <File Include="bin/DoubleMindWeb.dll">
-      <publishTime>06/01/2020 19:58:58</publishTime>
+      <publishTime>06/03/2020 02:02:15</publishTime>
     </File>
     <File Include="bin/DoubleMindWeb.pdb">
-      <publishTime>06/01/2020 19:58:58</publishTime>
+      <publishTime>06/03/2020 02:02:15</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>11/16/2019 03:00:22</publishTime>
@@ -386,7 +386,7 @@
       <publishTime>04/16/2020 23:20:36</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>06/01/2020 12:57:35</publishTime>
+      <publishTime>06/03/2020 02:46:47</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>04/16/2020 23:20:37</publishTime>
@@ -395,16 +395,34 @@
       <publishTime>05/21/2020 17:11:09</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>06/01/2020 20:04:02</publishTime>
+      <publishTime>06/03/2020 02:48:34</publishTime>
     </File>
     <File Include="Resources/DoubleMind.png">
       <publishTime>04/16/2020 23:20:36</publishTime>
+    </File>
+    <File Include="Resources/GamePlay1.png">
+      <publishTime>06/02/2020 00:53:53</publishTime>
+    </File>
+    <File Include="Resources/GamePlay2.png">
+      <publishTime>06/02/2020 00:53:53</publishTime>
+    </File>
+    <File Include="Resources/GamePlay3.png">
+      <publishTime>06/02/2020 00:53:53</publishTime>
+    </File>
+    <File Include="Resources/GamePlay4.png">
+      <publishTime>06/02/2020 00:53:53</publishTime>
     </File>
     <File Include="Resources/Logo.ico">
       <publishTime>04/16/2020 23:20:36</publishTime>
     </File>
     <File Include="Resources/NavIcon.png">
-      <publishTime>04/16/2020 23:20:36</publishTime>
+      <publishTime>06/02/2020 17:46:27</publishTime>
+    </File>
+    <File Include="Resources/NavIcon2.png">
+      <publishTime>06/02/2020 01:34:55</publishTime>
+    </File>
+    <File Include="Resources/QR.png">
+      <publishTime>06/02/2020 23:02:37</publishTime>
     </File>
     <File Include="Scripts/bootstrap.bundle.js">
       <publishTime>04/16/2020 23:20:36</publishTime>
@@ -767,22 +785,22 @@
       <publishTime>04/17/2020 18:00:08</publishTime>
     </File>
     <File Include="Views/Account/_ExternalLoginsListPartial.cshtml">
-      <publishTime>04/17/2020 15:19:46</publishTime>
+      <publishTime>06/02/2020 16:48:41</publishTime>
     </File>
     <File Include="Views/Home/Comments.cshtml">
-      <publishTime>05/22/2020 02:35:33</publishTime>
+      <publishTime>06/03/2020 02:43:43</publishTime>
     </File>
     <File Include="Views/Home/CommentsAdmin.cshtml">
       <publishTime>04/30/2020 12:44:12</publishTime>
     </File>
     <File Include="Views/Home/Contacts.cshtml">
-      <publishTime>04/16/2020 23:20:36</publishTime>
+      <publishTime>06/03/2020 02:37:50</publishTime>
     </File>
     <File Include="Views/Home/Download.cshtml">
-      <publishTime>04/16/2020 23:20:36</publishTime>
+      <publishTime>06/03/2020 01:40:42</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>04/18/2020 01:45:07</publishTime>
+      <publishTime>06/03/2020 02:47:57</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>04/18/2020 14:02:49</publishTime>
@@ -791,7 +809,7 @@
       <publishTime>04/18/2020 14:03:44</publishTime>
     </File>
     <File Include="Views/Manage/Index.cshtml">
-      <publishTime>04/18/2020 14:05:23</publishTime>
+      <publishTime>06/02/2020 20:22:48</publishTime>
     </File>
     <File Include="Views/Manage/ManageLogins.cshtml">
       <publishTime>04/18/2020 14:08:37</publishTime>
@@ -809,7 +827,7 @@
       <publishTime>04/17/2020 12:12:59</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>04/30/2020 12:44:06</publishTime>
+      <publishTime>06/02/2020 01:28:55</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>04/17/2020 12:14:25</publishTime>
@@ -821,7 +839,7 @@
       <publishTime>04/16/2020 23:20:36</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/01/2020 14:52:23</publishTime>
+      <publishTime>06/03/2020 02:48:34</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -22,7 +22,7 @@ namespace DoubleMindWeb.Models
             roleManager.Create(role2);
 
             // создаем пользователей
-            var admin = new ApplicationUser { Email = "admin@nure.ua", UserName = "admin" };
+            var admin = new ApplicationUser { Email = "admin@nure.ua", UserName = "admin@nure.ua" };
             string password = "Admin_123";
             var result = userManager.Create(admin, password);
 

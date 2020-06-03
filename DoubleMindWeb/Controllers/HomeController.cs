@@ -33,6 +33,7 @@ namespace DoubleMindWeb.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Download()
         {
             return View();
@@ -46,6 +47,7 @@ namespace DoubleMindWeb.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Comments()
         {
             // получаем из бд все объекты Book
@@ -93,6 +95,38 @@ namespace DoubleMindWeb.Controllers
             return RedirectToAction("Comments");
         }
 
+        [HttpPost]
+        public ActionResult DeleteComment(int CommentId)
+        {
+            Comment c = db.Comments.Find(CommentId);
+            db.Comments.Remove(c);
+            db.SaveChanges();
+            return RedirectToAction("Comments");
+        }
+
+        [HttpPost]
+        public ActionResult EditLink(string Link)
+        {
+            if (Link != null)
+                LinkModel.DownloadLink = Link;
+            return RedirectToAction("Download");
+        }
+
+        [HttpPost]
+        public ActionResult EditLinks(string TLink, string GLink, string TwLink, string LLink)
+        {
+            if (TLink != null)
+                LinkModel.TelegramLink = TLink;
+            if (GLink != null)
+                LinkModel.GmailLink = GLink;
+            if (TwLink != null)
+                LinkModel.TwitchLink = TwLink;
+            if (LLink != null)
+                LinkModel.LinkeDinLink = LLink;
+            return RedirectToAction("Contacts");
+        }
+
+        [Authorize]
         public ActionResult Contacts()
         {
             return View();

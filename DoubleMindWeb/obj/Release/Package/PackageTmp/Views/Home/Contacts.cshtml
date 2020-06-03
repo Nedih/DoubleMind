@@ -1,12 +1,90 @@
-﻿
+﻿@using DoubleMindWeb.Models;
+@using Microsoft.AspNet.Identity;
+@using Microsoft.AspNet.Identity.Owin;
+@using System.Web;
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
+@model DoubleMindWeb.Models.ApplicationUser
+@{
+    ApplicationUserManager userManager = HttpContext.Current.GetOwinContext()
+                                           .GetUserManager<ApplicationUserManager>();
+    ApplicationUser user = userManager.FindByName(User.Identity.Name);
+}
 
-<h2>Contacts</h2>
-
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<div class="centered">
+    <h2>You can contact us by:</h2>
+    <br />
+    <br />
+    </div>
+    <div class="centered">
+        <div class="contacts">
+            <div class="contacts2">
+                      <table>
+                          <tr>
+                              <td>
+                                  <h2>Telegram: </h2>
+                              </td>
+                              <td>
+                                  <a href="@LinkModel.TelegramLink">
+                                      <img src="https://d1icd6shlvmxi6.cloudfront.net/gsc/TRWODI/a6/70/35/a67035bfac6544929ec97a046f5928f4/images/contacts/telegram_icon_u148.svg?token=71a757d1825b0bc9471dbcfc303d9538586813e3cfd2d3b9be1979c3c0787743">
+                                  </a>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <h2>Google: </h2>
+                              </td>
+                              <td>
+                                  <a href="@LinkModel.GmailLink">
+                                      <img src="https://d1icd6shlvmxi6.cloudfront.net/gsc/TRWODI/a6/70/35/a67035bfac6544929ec97a046f5928f4/images/contacts/google_icon_u149.svg?token=43aa6ab5eabd92bee86f8c7e6d4154dced9a57212ad9b579070a0cbd13924c98" />
+                                  </a>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <h2>LinkeDin: </h2>
+                              </td>
+                              <td>
+                                  <a href="@LinkModel.LinkeDinLink">
+                                      <img src="https://d1icd6shlvmxi6.cloudfront.net/gsc/TRWODI/a6/70/35/a67035bfac6544929ec97a046f5928f4/images/contacts/linkedin_icon_u150.svg?token=8a20ef5d9476e1f9f0daac7658c43c9579e9598a5c049f874b0d91dc45dc2a3b" />
+                                  </a>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <h2>Twitch: </h2>
+                              </td>
+                              <td>
+                                  <a href="@LinkModel.LinkeDinLink">
+                                      <img href="@LinkModel.TwitchLink" src="https://d1icd6shlvmxi6.cloudfront.net/gsc/TRWODI/a6/70/35/a67035bfac6544929ec97a046f5928f4/images/contacts/twitch_icon_u151.svg?token=b1bbcec1cd2deea88b425ea6697e57ed563f041e23cd2a25ecc4ffcf672119ec" />
+                                  </a>
+                              </td>
+                          </tr>
+                      </table>
+                </div>
+            <div class="contacts2">
+                @if (user.Roles.Count > 1)
+                 {
+                    using (Html.BeginForm("EditLinks", "Home", FormMethod.Post))
+                    {
+                        <textarea name="TLink" placeholder="@LinkModel.TelegramLink"></textarea>
+                        <br />
+                        <textarea name="GLink" placeholder="@LinkModel.GmailLink"></textarea>
+                        <br />
+                        <textarea name="LLink" placeholder="@LinkModel.LinkeDinLink"></textarea>
+                        <br />
+                        <textarea name="TwLink" placeholder="@LinkModel.TwitchLink"></textarea>
+                        <br />
+                        <input type="submit" name="Change" value="Change" /><br />
+                    }
+                 }
+            </div>
+        </div>
+    </div>

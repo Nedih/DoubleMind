@@ -1,42 +1,79 @@
-﻿@model IEnumerable<DoubleMindWeb.Models.Comment>
+﻿@using DoubleMindWeb.Models;
+@using Microsoft.AspNet.Identity;
+@using Microsoft.AspNet.Identity.Owin;
+@using System.Web;
+@model IEnumerable<DoubleMindWeb.Models.Comment>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
-    <div style="padding: 10px; margin-top: 0">
-        <p style="font-size: 22pt">Comments</p>
-        <table style="margin: 30px; margin-bottom: 20px; padding-bottom: 40px">
-            @foreach (var b in Model)
-            {
-                <tr style=" margin: 100px">
-                    <td style="padding: 10px; padding-top: 50px">
-                        <span style="padding: 10px; margin: 10px" align="right">@b.CommentUserName</span>
-                        <span style="padding: 10px; margin: 10px" align="right">@b.CommentStars</span>
-                    </td>
-                </tr>
-                <tr style="border:1px solid; margin: 30px; margin-bottom: 100px; padding-bottom: 100px">
-                    <td style="padding: 10px; margin-bottom: 100px"><span style="margin: 15px; padding:15px; padding-bottom: 100px ">@b.CommentText</span></td>
-                    <td><span style="margin: 10px; padding: 10px; padding-bottom: 100px;">@b.CommentCreated</span></td>
-                </tr>
-            }
-        </table>
-        <div style="margin-top: 70px; margin-left: 30px">
-            @using (Html.BeginForm("PostComment", "Home", FormMethod.Post))
-            {
-                <span>@User.Identity.Name</span><br/>
-                <span>Mark:</span><input type="number" name="CommentMark" min="1" max="5" placeholder="1-5"
-                       style="width: 50px; height: 20px; margin-top: 10px; margin-left: 20px; align-content:end" /><br />
-                <input type="text" name="CommentText" placeholder="Type new comment..."
-                       style=" width: 100%; height: 50px; margin-top: 15px" />
-                <br />
-                <input type="submit" value="Post Comment"
-                       class="btn btn-success" style="margin-top:10px" />
-            }
+@{
+    ApplicationUserManager userManager = HttpContext.Current.GetOwinContext()
+                                           .GetUserManager<ApplicationUserManager>();
+    ApplicationUser user = userManager.FindByName(User.Identity.Name);
+}
+
+<div class="centered3">
+    <b>Comments</b>
+    <hr />
+</div>
+
+
+@foreach (var b in Model)
+{
+    <div class="centered" style="padding-top:30pt;">
+        <div class="horizontal" style="margin-top: auto">
+
+            <div class="centered2">
+                <div class="horizontal" style="margin-top: 0pt; margin-bottom: 0pt">
+                    <dl class="dl-horizontal"  style="padding-top: 0pt; padding-bottom: 0pt">
+                        <dt align="center" style="padding-left: 20px; margin-top: 10px;">@b.CommentUserName: </dt>
+                        <dd style="margin-top: 10px">
+                            Mark: @b.CommentStars
+                        </dd>
+                        <dt>Text:</dt>
+                        <dd style="max-width: 250px; word-break: break-all; padding-right: 20px">@b.CommentText</dd>
+                        <dt style="margin-bottom:10px">Date:</dt>
+                        <dd style="margin-bottom:10px">@b.CommentCreated</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="deleteForm" style="margin-top: 15pt">
+                @using (Html.BeginForm("DeleteComment", "Home", FormMethod.Post))
+                {
+                    <input type="hidden" name="CommentId" value="@b.CommentId" />
+                    if (user.Roles.Count > 1)
+                    {
+                        <input type="submit" value="Delete" class="btn-delete" />
+                    }
+                }
+            </div>
         </div>
-     </div>
+    </div>
+    <hr style="margin-left:5%;margin-right:5%; margin-top: 20pt"/>
+}
+
+<div class="centered">
+    <div class="comment">
+        @using (Html.BeginForm("PostComment", "Home", FormMethod.Post))
+        {
+            <span style="padding-left:20px; color:#5993d2; -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;">@User.Identity.Name</span>
+            <input type="number" name="CommentMark" min="1" max="5" placeholder="1-5"
+                   style="width: 50px; height: 20px; margin-top: 10px; margin-left: 20px; align-content: end" /><br />
+            <input type="text" name="CommentText" placeholder="Type new comment..."
+                   style=" width: 400px; max-width: 400px; height: 50px; margin-top: 15px; margin-left: 20px" />
+            <br />
+            <input type="submit" value="Post Comment"
+                   class="btn btn-success" style="margin-top:10px; margin-left: 20px" />
+        }
+    </div>
+</div>
 

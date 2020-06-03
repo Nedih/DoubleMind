@@ -47,11 +47,11 @@ namespace DoubleMindWeb.Controllers
         }
 
         [HttpGet]
-        public GameUserModels GetUser([FromBody] ApplicationUser usr)
+        public GameUserModels GetUser(string email)
         {
             ApplicationUserManager userManager = HttpContext.Current.GetOwinContext()
                                                   .GetUserManager<ApplicationUserManager>();
-            ApplicationUser user = userManager.FindByName(usr.Email);
+            ApplicationUser user = userManager.FindByName(email);
             GameUserModels guser = new GameUserModels(user.UserLevel, user.UserPoints);           
             if (user != null)
                 return guser;

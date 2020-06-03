@@ -390,6 +390,7 @@
     <Compile Include="Models\AppDbInitializer.cs" />
     <Compile Include="Models\GameUserModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LinkModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -412,8 +413,18 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Resources\DoubleMind.png" />
+    <Content Include="Resources\GamePlay1.png" />
+    <Content Include="Resources\GamePlay2.png" />
+    <Content Include="Resources\GamePlay3.png" />
+    <Content Include="Resources\GamePlay4.png" />
+    <Content Include="Resources\Gmail.png" />
+    <Content Include="Resources\LinkeDin.png" />
+    <Content Include="Resources\Twitch.png" />
+    <Content Include="Resources\Telegram.png" />
+    <Content Include="Resources\QR.png" />
     <Content Include="Resources\Logo.ico" />
     <Content Include="Resources\NavIcon.png" />
+    <Content Include="Resources\NavIcon2.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />

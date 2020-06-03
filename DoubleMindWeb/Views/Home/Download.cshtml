@@ -1,12 +1,40 @@
-﻿
+﻿@using DoubleMindWeb.Models;
+@using Microsoft.AspNet.Identity;
+@using Microsoft.AspNet.Identity.Owin;
+@using System.Web;
+@model DoubleMindWeb.Models.ApplicationUser
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
+@{
+    ApplicationUserManager userManager = HttpContext.Current.GetOwinContext()
+                                           .GetUserManager<ApplicationUserManager>();
+    ApplicationUser user = userManager.FindByName(User.Identity.Name);
+}
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<div class="centered">
+    <div class="download">
+        <h2>QR-Download</h2>
 
-<h2>Download</h2>
+        <img src="../Resources/QR.png" />
 
+        <h2>Or click the link below:</h2>
+
+        <a href="@LinkModel.DownloadLink">Download</a>
+        <div style="margin-top: 15px">
+            @if (user.Roles.Count > 1)
+            {
+                using (Html.BeginForm("EditLink", "Home", FormMethod.Post))
+                {
+                    <textarea name="Link" placeholder="@LinkModel.DownloadLink"></textarea>
+                    <input type="submit" name="Change" value="Change" />
+                }
+            }
+        </div>
+        </div>
+</div>

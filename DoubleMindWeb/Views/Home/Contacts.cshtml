@@ -1,12 +1,91 @@
-﻿
+﻿@using DoubleMindWeb.Models;
+@using Microsoft.AspNet.Identity;
+@using Microsoft.AspNet.Identity.Owin;
+@using System.Web;
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
+@model DoubleMindWeb.Models.ApplicationUser
+@{
+    ApplicationUserManager userManager = HttpContext.Current.GetOwinContext()
+                                           .GetUserManager<ApplicationUserManager>();
+    ApplicationUser user = userManager.FindByName(User.Identity.Name);
+}
 
-<h2>Contacts</h2>
-
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<div class="centered">
+    <b style="-webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: black; color: white; font-size: 44px">You can contact us by:</b>
+    <br />
+    <br />
+    </div>
+    <div class="centered">
+        <div class="contacts">
+            <div class="contacts2" style="border: 2px black solid; background-color: #e13a51; padding: 20px">
+                      <table>
+                          <tr>
+                              <td>
+                                  <h2>Telegram: </h2>
+                              </td>
+                              <td>
+                                  <a href="@LinkModel.TelegramLink">
+                                      <img src="../Resources/Telegram.png">
+                                  </a>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <h2>Google: </h2>
+                              </td>
+                              <td>
+                                  <a href="@LinkModel.GmailLink">
+                                      <img src="../Resources/Gmail.png" />
+                                  </a>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <h2>LinkeDin: </h2>
+                              </td>
+                              <td>
+                                  <a href="@LinkModel.LinkeDinLink">
+                                      <img src="../Resources/LinkeDin.png" />
+                                  </a>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <h2>Twitch: </h2>
+                              </td>
+                              <td>
+                                  <a href="@LinkModel.LinkeDinLink">
+                                      <img src="../Resources/Twitch.png" />
+                                  </a>
+                              </td>
+                          </tr>
+                      </table>
+                </div>
+            <div class="contacts2" style="border: 2px black solid; background-color: #e13a51; padding: 20px">
+                @if (user.Roles.Count > 1)
+                 {
+                    using (Html.BeginForm("EditLinks", "Home", FormMethod.Post))
+                    {
+                        <textarea name="TLink" placeholder="@LinkModel.TelegramLink"></textarea>
+                        <br />
+                        <textarea name="GLink" placeholder="@LinkModel.GmailLink"></textarea>
+                        <br />
+                        <textarea name="LLink" placeholder="@LinkModel.LinkeDinLink"></textarea>
+                        <br />
+                        <textarea name="TwLink" placeholder="@LinkModel.TwitchLink"></textarea>
+                        <br />
+                        <input type="submit" name="Change" value="Change" /><br />
+                    }
+                 }
+            </div>
+        </div>
+    </div>

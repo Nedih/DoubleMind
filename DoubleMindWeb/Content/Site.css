@@ -1,34 +1,209 @@
-﻿body {
+﻿
+body {
     font-size: 13px;
     font-family: Verdana, Arial, Helvetica, Sans-Serif;
-    background-color: #f7f7fa;
+    background-color: #5993d2;
+    color: white;
     /*height: 100%;
     min-height: 100%;*/
 }
 
-#page-container {
-    position: relative;
-    min-height: 100vh;
-    margin: 0;
-}
+    #page-container {
+        position: relative;
+        min-height: 100vh;
+        margin: 0;
+    }
 
-/*html {
+    /*html {
     height: 100%;
     min-height: 100%;
 }*/
-/*
+    /*
 @media screen and (max-width: 1600px) {
     body {
         background-color: blue;
     }
 }*/
-
-@media screen and (max-width: 450px) {
-    body {
-        background-color: orange;
-    }
+.profile {
+    margin-top: 80px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #e13a51;
+    border: 2px black solid;
 }
 
+.horizontal{
+    display:flex;
+    flex-direction:row;
+    margin: auto;
+    justify-content: center;
+}
+
+.white a{
+    color:white;
+}
+
+    .comnts{
+
+    }
+
+
+.centered3 {
+    display: flex;
+    justify-content: center;
+    background-color: #312536;
+    padding-top: 10pt;
+    border: 1px black solid;
+    font-family: Candara;
+}
+
+    .centered3 b {
+        color: #f2f4f7;
+        font-size: 52pt;
+        margin-left: 0;
+        padding-bottom: 10pt;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: black;
+    }
+
+.centered {
+    display: flex;
+    justify-content: center;
+    padding-top: 50pt;
+}
+
+    .centered img {
+        width: 350px;
+        margin: auto;
+        border: 2px solid black;
+    }
+.download {
+    flex-direction: column;
+    text-align: center;
+}
+
+.download h2{
+    margin-bottom: 40px;
+    color: black;
+}
+
+    .download a {
+        border: 2px black solid;
+        width: 70px;
+        height: auto;
+        background-color: #e13a51;
+        color: #d8e3f5;
+        padding: 10px;
+        font-size: 22pt;
+    }
+
+    .download input {
+        background-color: #e13a51;
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+
+        .download input:hover {
+            background-color: #fa5c72;
+        }
+    .download a:hover {
+        color: #d8e3f5;
+        background-color: #fa5c72;
+    }
+
+.contacts {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.contacts2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+    .contacts2 h2 {
+        margin-bottom: 25px;
+        color: black;
+    }
+
+    .contacts2 b {
+        margin-bottom: 25px;
+        color: black;
+    }
+
+    .contacts2 img {
+        width: 40px;
+        height: auto;
+    }
+
+        .contacts2 img:hover {
+            background-color: #d8e3f5;
+        }
+
+.contacts2 td{
+    text-align: center;
+}
+
+
+
+
+    .contacts2 input {
+        background-color: #3075ec;
+    }
+
+        .contacts2 input:hover {
+            background-color: #8fb6f9;
+        }
+
+
+ textarea {
+     margin-top: 15px;
+        width: 220px;
+        height: auto;
+        margin-bottom: 20px;
+        margin-left: 30px;
+        color: black;
+    }
+
+
+    .deleteForm{
+
+    }
+
+.btn-delete {
+    background-color: #b62127;
+    height: auto;
+    width: auto;
+    color: white;
+    margin-left: 25px;
+}
+
+    .btn-delete:hover {
+        background-color: #f1696f;
+    }
+
+.centered2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 700px;
+}
+
+.dl-horizontal {
+    width: 400px;
+    border: white 2px solid;
+    background-color: #e13a51;
+    padding: 20px;
+}
+
+.centered table tr {
+    padding: 10px;
+    
+}
 
     nav {
         display: block;
@@ -84,28 +259,62 @@
         padding-right: 10px;
     }
 
-    .shapka {
-        display: flex;
-        justify-content: center;
-        background-color: dodgerblue;
+.comment {
+    margin-top: 10px;
+    padding-left: 20px;
+    border: black solid 2px;
+    padding: 20px;
+    color: black;
+    background-color: #c5dafe;
+    width: 500px;
+}
+
+     .comment .btn-success{
+        background-color: #1ec510;
+    }
+
+   /* .comment input {
+        background-color: #5993d2;
+        color: white;
+    }*/
+   
+    .content {
+       /*padding-left: 4%;
+        padding-right: 4%;*/
+        padding-bottom: 185pt;
+    }
+
+    .logo {
+        margin: 10px;
+        height: 50px;
+        width: auto;
         align-content: center;
-        margin-bottom: 50pt;
     }
 
-        .shapka img {
-            align-content: center;
-        }
+.shapka {
+    display: flex;
+    justify-content: center;
+    background-color: #e13a51;
+    align-content: center;
+    border: solid 2px black;
+}
 
-    .Desc {
-        margin-top: 50pt;
-        margin-left: 20%;
-        margin-right: 20%;
-    }
+.Desc {
+    margin-top: 50pt;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 70px;
+}
 
         .Desc p {
             padding-top: 35pt;
             font-size: 15pt;
         }
+
+    .Desc hr {
+        color: black;
+        background-color: black;
+    }
 
     .SysR {
         margin-top: 50pt;
@@ -167,26 +376,27 @@
     }
 
 
-    #registerLink {
-        color: black;
-        background-color: white;
-        border: 1px solid black;
-        margin-top: 5px;
+#registerLink {
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+    #registerLink:hover {
+        color: white;
+        background-color: #5b54f0;
+        border: 1px solid white;
     }
 
-        #registerLink:hover {
-            color: white;
-            background-color: forestgreen;
-            border: 1px solid white;
-        }
 
-
-    #loginLink {
-        color: black;
-        background-color: white;
-        border: 1px solid black;
-        margin-top: 5px;
-    }
+#loginLink {
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    margin-top: 5px;
+}
 
         #loginLink:hover {
             color: white;
@@ -214,4 +424,208 @@
             .navbar-right a:hover {
                 color: black;
             }
+
+
+
+@media screen and (max-width: 450px) {
+    body {
+        background-color: orange;
+        font-size: 10px;
+        font-family: Verdana, Arial, Helvetica, Sans-Serif;
+    }
+
+    p{
+        font-size: 8px;
+    }
+
+    .nav-link {
+        margin-bottom: 0;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+        .nav-link li {
+            display: inline-block;
+            float: left;
+            padding-right: 2pt;
+        }
+
+        .nav-link a {
+            color: white;
+            font-size: 6pt;
+            padding: 2pt;
+        }
+
+            .nav-link a:hover {
+                background-color: white;
+                color: black;
+            }
+
+    .logo {
+        height: 25px;
+        width: auto;
+        align-content: center;
+    }
+
+    table {
+        vertical-align: middle;
+        text-align: left;
+    }
+
+    .header {
+        font-weight: bold;
+    }
+
+    td {
+        padding-right: 5px;
+    }
+
+    .content {
+        margin-left: 1%;
+        margin-right: 1%;
+        padding-bottom: 75pt;
+    }
+
+    .shapka {
+        display: flex;
+        justify-content: center;
+        background-color: #616ff5;
+        align-content: center;
+        margin-bottom: 20pt;
+        width: 100%;
+    }
+
+    .shapka img{
+        width: 300px;
+        height: auto;
+    }
+
+    .Desc {
+        margin-top: 20pt;
+        margin-left: 10%;
+        margin-right: 10%;
+        color: black;
+    }
+
+        .Desc p {
+            padding-top: 5pt;
+            font-size: 8pt;
+            color: black;
+        }
+
+    .SysR {
+        margin-top: 20pt;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+        .SysR p {
+            padding-top: 5pt;
+            font-size: 8pt;
+        }
+
+    h9 {
+        font-size: 9pt;
+        padding-bottom: 10pt;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 8pt;
+        background-color: black;
+        color: lightgray;
+        padding: 5pt;
+        margin-top: 50pt;
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+    }
+
+    #login-btn {
+        color: white;
+    }
+
+    
+
+    .dl-horizontal dt {
+        white-space: normal;
+    }
+
+    /* Set width on the form input elements since they're 100% wide by default */
+    input,
+    select,
+    textarea {
+        max-width: 180px;
+    }
+
+    .checkbox {
+        float: left;
+        display: flex;
+        float: left;
+        display: flex;
+        justify-content: left;
+        padding-right: 10pt;
+    }
+
+    .RememberMe {
+        display: flex;
+        float: left;
+        margin-right: 30pt;
+        position: relative;
+    }
+
+
+    #registerLink {
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        margin-top: 5px;
+        padding: 1px;
+        font-size: 6px;
+    }
+
+        #registerLink:hover {
+            color: white;
+            background-color: forestgreen;
+            border: 1px solid white;
+        }
+
+
+    #loginLink {
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        margin-top: 5px;
+        padding: 1px;
+        font-size: 6px;
+    }
+
+        #loginLink:hover {
+            color: white;
+            background-color: forestgreen;
+            border: 1px solid white;
+        }
+
+    #navbarSupportedContent {
+        align-content: center;
+        align-items: center;
+        display: inline-flex !important;
+    }
+
+    .navbar-right {
+        margin-left: auto;
+        margin-right: 1px;
+        top: 5px;
+        right: 0;
+    }
+
+        .navbar-right a {
+            color: white;
+        }
+
+            .navbar-right a:hover {
+                color: black;
+            }
+}
+    }
 
